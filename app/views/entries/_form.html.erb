@@ -1,0 +1,22 @@
+<%= form_with(model: [@journal, entry], class: "contents", id: "entry_form") do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.each do |error| %>
+          <li><%= entry.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :text %>
+    <%= form.text_area :text, required: true, data: { "validation-message": "Please enter some text for the entry." } %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit %>
+  </div>
+<% end %>

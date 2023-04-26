@@ -1,0 +1,24 @@
+<div >
+  <div>
+    <div>
+      <%= render @journal %>
+
+      <%= link_to 'Back to journals', journals_path %>
+    </div>
+  </div>
+
+  <% if notice.present? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+  <div>
+    <h1>Entries</h1>
+    <%= turbo_frame_tag Entry.new do %>
+      <%= link_to 'New Entry', new_journal_entry_path(@journal) %>
+    <% end %>
+  </div>
+
+  <div id="entries">
+    <%= render @journal.entries %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<%= turbo_frame_tag entry do %>
+  <p>
+    <strong>Title:</strong>
+    <%= entry.text %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= button_to "Destroy this entry",journal_entry_path(@journal, entry), method: :delete %>
+    <%= link_to 'Edit this entry', edit_journal_entry_path(@journal, entry) %>
+    <hr>
+  <% end %>
+<% end %>

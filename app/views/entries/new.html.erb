@@ -1,0 +1,9 @@
+<!-- app/views/journals/new.html.erb -->
+
+<h4>New Entry</h4>
+
+<%= turbo_frame_tag @entry do %>
+  <div>
+  <%= render "form", entry: @entry %>
+  </div>
+<% end %>
