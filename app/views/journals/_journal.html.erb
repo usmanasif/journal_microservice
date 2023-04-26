@@ -1,0 +1,12 @@
+<%= turbo_frame_tag journal do %>
+  <p class="my-5">
+    <%= journal.name %>
+  </p>
+
+  <% if action_name != "show" && controller_name!= 'entries'%>
+    <%= button_to "Destroy",journal_path(journal), method: :delete %>
+    <%= link_to "Show", journal_entries_path(journal), data: { turbo_frame: "_top" } %>
+    <%= link_to 'Edit', edit_journal_path(journal) %>
+    <hr class="mt-6">
+  <% end %>
+<% end %>

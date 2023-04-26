@@ -1,0 +1,22 @@
+<%= form_with(model: journal, class: "contents", id: "journal_form") do |form| %>
+  <% if journal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(journal.errors.count, "error") %> prohibited this journal from being saved:</h2>
+
+      <ul>
+        <% journal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true, data: { "validation-message": "Please enter a name for the journal." } %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

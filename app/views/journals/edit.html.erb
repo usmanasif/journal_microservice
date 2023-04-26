@@ -1,0 +1,9 @@
+<%= turbo_frame_tag @journal do %>
+  <div class="mx-auto md:w-2/3 w-full">
+    <h1 class="font-bold text-4xl">Editing journal</h1>
+
+    <%= render "form", journal: @journal %>
+
+    <%= link_to "Cancel", journals_path %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+
+  <div>
+    <h1>Journals</h1>
+    <%= turbo_frame_tag Journal.new do %>
+      <%= link_to 'New Journal', new_journal_path %>
+    <% end %>
+  </div>
+
+  <div id="journals" class="min-w-full">
+    <%= render @journals %>
+  </div>
+</div>

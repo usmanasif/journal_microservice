@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <% if notice.present? %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render @journal %>
+
+    <%= link_to 'Back to journals', journals_path %>
+  </div>
+</div>
